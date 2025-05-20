@@ -8,16 +8,11 @@ const Main = () => {
     })
 
     function handleChange(event) {
-        const { value } = event.currentTarget
-        setMeme(prev => {
-            return (
-                {
-                    ...prev,
-                    topText: value
-
-                }
-            )
-        })
+        const { value, name } = event.currentTarget
+        setMeme(prevMeme => ({
+            ...prevMeme,
+            [name]: value
+        }))
     }
 
     return (
@@ -29,6 +24,7 @@ const Main = () => {
                         placeholder="One does not simply"
                         name="topText"
                         onChange={handleChange}
+                        value={meme.topText}
                     />
                 </label>
 
