@@ -1,11 +1,24 @@
 import React from 'react'
 
 const Main = () => {
-    const [meme] = React.useState({
+    const [meme, setMeme] = React.useState({
         topText: "One does not simply",
         bottomText: "Walk into Mordor",
         imageUrl: "http://i.imgflip.com/1bij.jpg"
     })
+
+    function handleChange(event) {
+        const { value } = event.currentTarget
+        setMeme(prev => {
+            return (
+                {
+                    ...prev,
+                    topText: value
+
+                }
+            )
+        })
+    }
 
     return (
         <main>
@@ -15,6 +28,7 @@ const Main = () => {
                         type="text"
                         placeholder="One does not simply"
                         name="topText"
+                        onChange={handleChange}
                     />
                 </label>
 
