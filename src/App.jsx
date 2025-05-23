@@ -1,5 +1,6 @@
 import Header from "./components/Header"
 import Main from "./components/Main"
+import Starwars from "./components/Starwars"
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
     <>
       <Header />
       <Main />
+      <Starwars />
     </>
   )
 }
