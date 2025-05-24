@@ -7,10 +7,16 @@ const Starwars = () => {
     console.log("Rendered!")
 
     React.useEffect(() => {
-        console.log("Effect ran")
-        fetch("https://swapi.dev/api/people/1")
-            .then(res => res.json())
-            .then(data => setStarWarsData(data))
+        const fetchData = async () => {
+            try {
+                const response = await fetch("https://swapi.dev/api/people/1");
+                const result = await response.json()
+                setStarWarsData(result)
+            } catch (e) {
+                console.log(`Error ${e}`)
+            }
+        }
+        fetchData()
     }, [])
 
 
