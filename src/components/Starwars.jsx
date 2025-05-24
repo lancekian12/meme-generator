@@ -3,9 +3,12 @@ import React from 'react'
 const Starwars = () => {
     const [starWarsData, setStarWarsData] = React.useState(null)
 
-    fetch("https://swapi.dev/api/people/1")
-        .then(res => res.json())
-        .then(data => setStarWarsData(data))
+    React.useEffect(() => {
+        fetch("https://swapi.dev/api/people/1")
+            .then(res => res.json())
+            .then(data => setStarWarsData(data))
+    })
+
 
     return (
         <div>
