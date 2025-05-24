@@ -9,7 +9,7 @@ const Starwars = () => {
     React.useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("https://swapi.dev/api/people/1");
+                const response = await fetch(`https://swapi.dev/api/people/${count}`);
                 const result = await response.json()
                 setStarWarsData(result)
             } catch (e) {
@@ -17,7 +17,7 @@ const Starwars = () => {
             }
         }
         fetchData()
-    }, [])
+    }, [count])
 
 
     return (
