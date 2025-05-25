@@ -7,6 +7,12 @@ const Main = () => {
         imageUrl: "http://i.imgflip.com/1bij.jpg"
     })
 
+    React.useEffect(() => {
+        fetch("https://api.imgflip.com/get_memes")
+            .then(res => res.json())
+            .then(data => console.log(data.data.memes))
+    }, [])
+
     function handleChange(event) {
         const { value, name } = event.currentTarget
         setMeme(prevMeme => ({
