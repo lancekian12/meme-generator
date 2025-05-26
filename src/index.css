@@ -100,8 +100,15 @@ main {
 }
 
 /* star wars */
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: yellow;
+}
+
 button {
   border: none;
   border-radius: 5px;
-  padding: 10px 30px;
+  padding: 1rem;
+  cursor: pointer;
 }
