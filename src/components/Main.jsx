@@ -22,7 +22,16 @@ const Main = () => {
             [name]: value
         }))
     }
-    console.log(allMemes)
+
+    function getNewMemeImage() {
+        const newMemeUrl = allMemes[Math.floor(Math.random() * allMemes.length)]?.url
+        setMeme(prev => {
+            return ({
+                ...prev,
+                imageUrl: newMemeUrl
+            })
+        })
+    }
 
     return (
         <main>
@@ -46,7 +55,7 @@ const Main = () => {
                         value={meme.bottomText}
                     />
                 </label>
-                <button>Get a new meme image 🖼</button>
+                <button onClick={getNewMemeImage}>Get a new meme image 🖼</button>
             </div>
             <div className="meme">
                 <img src={meme.imageUrl} />
