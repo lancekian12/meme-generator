@@ -5,20 +5,20 @@ import WindowTracker from "./components/WindowTracker"
 import React from "react"
 
 function App() {
-  const [show, setShow] = React.useState(true)
+  // const [show, setShow] = React.useState(true)
 
-  function toggle() {
-    setShow(prevShow => !prevShow)
-  }
+  // function toggle() {
+  //   setShow(prevShow => !prevShow)
+  // }
 
   return (
     <>
-      <main className="container">
+      {/* <main className="container">
         <button onClick={toggle}>
           Toggle WindowTracker
         </button>
         {show && <WindowTracker />}
-      </main>
+      </main> */}
       <Header />
       <Main />
       {/* <Starwars /> */}
